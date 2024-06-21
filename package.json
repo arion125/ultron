@@ -1,6 +1,6 @@
 {
-  "name": "ultron-copilot",
-  "version": "2.0.44",
+  "name": "ultron-copilot-devgiga",
+  "version": "2.0.45.1",
   "module": "index.ts",
   "bin": "./index.js",
   "description": "...",
