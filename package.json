@@ -39,13 +39,14 @@
     "fs-extra": "^11.2.0",
     "inquirer": "^8.0.0",
     "semver": "^7.6.2",
-    "undici": "^6.18.2"
+    "undici": "^6.18.2",
+    "rpc-websockets": "^7.11.0"
   },
   "resolutions": {
     "@solana/spl-token": "<=0.4.1",
     "@solana/spl-token-metadata": "<=0.1.2",
     "@solana/web3.js": "<=1.91.4",
-    "rpc-websockets": "7.9.0"
+    "rpc-websockets": "^7.11.0"
   },
   "author": "giga89",
   "license": "ISC",
