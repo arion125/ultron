@@ -1,6 +1,6 @@
 {
   "name": "ultron-copilot-devgiga",
-  "version": "2.14.0",
+  "version": "2.15.0",
   "module": "index.ts",
   "bin": {
     "ultron-copilot-devgiga": "dist-prod/index.js"
@@ -45,7 +45,7 @@
     "@solana/spl-token": "<=0.4.1",
     "@solana/spl-token-metadata": "<=0.1.2",
     "@solana/web3.js": "<=1.91.4",
-    "rpc-websockets": "^7.11.0"
+    "rpc-websockets": "7.11.2"
   },
   "author": "giga89",
   "license": "ISC",
