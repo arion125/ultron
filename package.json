@@ -1,8 +1,10 @@
 {
-  "name": "ultron-copilot-devgiga",
-  "version": "2.0.45.1",
+  "name": "@giga89/ultron-copilot-devgiga",
+  "version": "2.0.5-6.1",
   "module": "index.ts",
-  "bin": "./index.js",
+  "bin": {
+    "ultron-copilot-devgiga": "index.js"
+  },
   "description": "...",
   "main": "index.js",
   "scripts": {
@@ -43,6 +45,14 @@
     "@solana/web3.js": "<=1.91.4",
     "rpc-websockets": "^7.11.0"
   },
-  "author": "meta_arion",
-  "license": "ISC"
+  "author": "giga89",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arion125/ultron-copilot.git"
+  },
+  "bugs": {
+    "url": "https://github.com/arion125/ultron-copilot/issues"
+  },
+  "homepage": "https://github.com/arion125/ultron-copilot#readme"
 }
