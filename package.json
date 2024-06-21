@@ -3,7 +3,7 @@
   "version": "2.13.0",
   "module": "index.ts",
   "bin": {
-    "ultron-copilot-devgiga": "index.js"
+    "ultron-copilot-devgiga": "dist-prod/index.js"
   },
   "description": "...",
   "main": "dist-prod/index.js",
