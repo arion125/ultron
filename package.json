@@ -1,12 +1,14 @@
 {
   "name": "ultron-copilot-devgiga",
-  "version": "2.10.0",
+  "version": "2.11.0",
   "module": "index.ts",
   "bin": {
     "ultron-copilot-devgiga": "index.js"
   },
   "description": "...",
-  "main": "index.js",
+  "main": "dist-prod/index.js",
+  "types": "dist-prod/index.d.ts",
+  "prepublish": "tsc",
   "scripts": {
     "build-dev": "npx tsc -p tsconfig.dev.json",
     "build-prod": "npx tsc -p tsconfig.prod.json",
