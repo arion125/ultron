@@ -178,6 +178,4 @@ dist*
 .DS_Store
 
 _scripts
-package-lock.json
-yarn.lock
 yarn.lock
