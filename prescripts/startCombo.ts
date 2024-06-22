@@ -65,7 +65,7 @@ export const startCombo = async (player: SagePlayer) => {
     movementBack?.movement,
   );
   
-  const fuelNeeded = miningSessionData.fuelNeeded + (goFuelNeeded + Math.round(goFuelNeeded * 0.3)) + (backFuelNeeded + Math.round(backFuelNeeded * 0.3));
+  const fuelNeeded = miningSessionData.fuelNeeded + (goFuelNeeded + Math.round(goFuelNeeded * 0.1)) + (backFuelNeeded + Math.round(backFuelNeeded * 0.1));
   // console.log("Fuel needed:", fuelNeeded);
 
   // 7. start combo loop
