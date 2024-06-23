@@ -59,7 +59,7 @@ const test = async () => {
     const keypair = await getKeypairFromSecret(profile);
 
     //allunghiamo il timeout per le fetch
-    setGlobalDispatcher(new Agent({ connect: { timeout: 120 } }) )
+    setGlobalDispatcher(new Agent({ connect: { timeout: 240_000 } }) )
 
 
     // 1. Setup environment (SageGame.ts) [keypair required]
