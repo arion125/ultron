@@ -26,6 +26,7 @@ import { fetch, setGlobalDispatcher, Agent } from "undici"
 const test = async () => {
 
   console.log(`Welcome to Ultron Copilot ${version}!`);
+  console.log(`THIS IS A VERSION FOR CRAZY PEOPLE`);
 
   const { startOption } = await setStart();
 
@@ -58,7 +59,7 @@ const test = async () => {
     const keypair = await getKeypairFromSecret(profile);
 
     //allunghiamo il timeout per le fetch
-    setGlobalDispatcher(new Agent({ connect: { timeout: 120_000 } }) )
+    setGlobalDispatcher(new Agent({ connect: { timeout: 120 } }) )
 
 
     // 1. Setup environment (SageGame.ts) [keypair required]
