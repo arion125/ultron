@@ -39,7 +39,7 @@
     "fs-extra": "^11.2.0",
     "inquirer": "^8.0.0",
     "semver": "^7.6.2",
-    "undici": "^6.18.2",
+    "undici": "^6.19.2",
     "rpc-websockets": "7.9.0"
   },
   "resolutions": {
