@@ -53,20 +53,25 @@ export const cargoV2 = async (
 
     // 2. load cargo go
     const effectiveResourcesGo: InputResourcesForCargo[] = [];
-
+    var fuelLoaded = 0
     for (const item of resourcesGo) {
       var cargotype = CargoPodType.CargoHold
+      var amount = item.amount
       if(item.resource == ResourceName.Ammo)
       {
         cargotype = CargoPodType.AmmoBank
       }
-      /*
       else if(item.resource == ResourceName.Fuel)
       {
         cargotype = CargoPodType.FuelTank
+        const maxFuelToLoad = fuelTank.maxCapacity - fuelNeeded
+        if(item.amount > maxFuelToLoad)
+        {
+          amount = maxFuelToLoad
+        }
+        fuelLoaded = amount
       }
-        */
-      const loading = await actionWrapper(loadCargo, fleet, item.resource, cargotype, new BN(item.amount));
+      const loading = await actionWrapper(loadCargo, fleet, item.resource, cargotype, new BN(amount));
       if (loading.type === "Success")
         effectiveResourcesGo.push(item);
     }
@@ -114,34 +119,39 @@ export const cargoV2 = async (
       {
         cargotype = CargoPodType.AmmoBank
       }
-      /*
       else if(item.resource == ResourceName.Fuel)
       {
         cargotype = CargoPodType.FuelTank
-        amount = new BN(item.amount - backFuelNeeded)
-      }*/
-      const unloading = await actionWrapper(unloadCargo, fleet, item.resource, CargoPodType.CargoHold, amount);
+        amount = fuelLoaded
+      }
+      const unloading = await actionWrapper(unloadCargo, fleet, item.resource, cargotype, amount);
     }
 
     
     // 8. load cargo back
     const effectiveResourcesBack: InputResourcesForCargo[] = [];
     
+    var fuelLoaded = 0
     for (const item of resourcesBack) {
       var cargotype = CargoPodType.CargoHold
+      var amount = item.amount
       if(item.resource == ResourceName.Ammo)
       {
         cargotype = CargoPodType.AmmoBank
       }
-      /*
       else if(item.resource == ResourceName.Fuel)
       {
         cargotype = CargoPodType.FuelTank
+        const maxFuelToLoad = fuelTank.maxCapacity - fuelNeeded
+        if(item.amount > maxFuelToLoad)
+        {
+          amount = maxFuelToLoad
+        }
+        fuelLoaded = amount
       }
-        */
-      const loading = await actionWrapper(loadCargo, fleet, item.resource, cargotype, new BN(item.amount));
+      const loading = await actionWrapper(loadCargo, fleet, item.resource, cargotype, new BN(amount));
       if (loading.type === "Success")
-        effectiveResourcesBack.push(item);  
+        effectiveResourcesBack.push(item);
     }
 
     // 9. undock from starbase
@@ -179,13 +189,12 @@ export const cargoV2 = async (
       {
         cargotype = CargoPodType.AmmoBank
       }
-      /*
       else if(item.resource == ResourceName.Fuel)
       {
         cargotype = CargoPodType.FuelTank
-        amount = new BN(item.amount - backFuelNeeded)
-      }*/
-      const unloading = await actionWrapper(unloadCargo, fleet, item.resource, CargoPodType.CargoHold, amount);    
+        amount = fuelLoaded
+      }
+      const unloading = await actionWrapper(unloadCargo, fleet, item.resource, cargotype, amount);    
     }
 
     // 13. send notification
