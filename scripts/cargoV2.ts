@@ -71,9 +71,13 @@ export const cargoV2 = async (
         }
         fuelLoaded = amount
       }
-      const loading = await actionWrapper(loadCargo, fleet, item.resource, cargotype, new BN(amount));
-      if (loading.type === "Success")
-        effectiveResourcesGo.push(item);
+
+      if(amount > 0)
+      {        
+        const loading = await actionWrapper(loadCargo, fleet, item.resource, cargotype, new BN(amount));
+        if (loading.type === "Success")
+          effectiveResourcesGo.push(item);
+      }
     }
     
     // 4. undock from starbase
@@ -149,9 +153,12 @@ export const cargoV2 = async (
         }
         fuelLoaded = amount
       }
-      const loading = await actionWrapper(loadCargo, fleet, item.resource, cargotype, new BN(amount));
-      if (loading.type === "Success")
-        effectiveResourcesBack.push(item);
+      if(amount > 0)
+      {  
+        const loading = await actionWrapper(loadCargo, fleet, item.resource, cargotype, new BN(amount));
+        if (loading.type === "Success")
+          effectiveResourcesBack.push(item);
+      }
     }
 
     // 9. undock from starbase
