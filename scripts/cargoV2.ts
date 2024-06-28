@@ -61,6 +61,7 @@ export const cargoV2 = async (
       {
         cargotype = CargoPodType.AmmoBank
       }
+      /*
       else if(item.resource == ResourceName.Fuel)
       {
         cargotype = CargoPodType.FuelTank
@@ -71,7 +72,7 @@ export const cargoV2 = async (
         }
         fuelLoaded = amount
       }
-
+      */
       if(amount > 0)
       {        
         const loading = await actionWrapper(loadCargo, fleet, item.resource, cargotype, new BN(amount));
@@ -123,11 +124,13 @@ export const cargoV2 = async (
       {
         cargotype = CargoPodType.AmmoBank
       }
+      /*
       else if(item.resource == ResourceName.Fuel)
       {
         cargotype = CargoPodType.FuelTank
         amount = fuelLoaded
       }
+        */
       const unloading = await actionWrapper(unloadCargo, fleet, item.resource, cargotype, amount);
     }
 
@@ -143,6 +146,8 @@ export const cargoV2 = async (
       {
         cargotype = CargoPodType.AmmoBank
       }
+      
+      /*
       else if(item.resource == ResourceName.Fuel)
       {
         cargotype = CargoPodType.FuelTank
@@ -153,6 +158,7 @@ export const cargoV2 = async (
         }
         fuelLoaded = amount
       }
+        */
       if(amount > 0)
       {  
         const loading = await actionWrapper(loadCargo, fleet, item.resource, cargotype, new BN(amount));
@@ -196,11 +202,13 @@ export const cargoV2 = async (
       {
         cargotype = CargoPodType.AmmoBank
       }
+      /*
       else if(item.resource == ResourceName.Fuel)
       {
         cargotype = CargoPodType.FuelTank
         amount = fuelLoaded
       }
+        */
       const unloading = await actionWrapper(unloadCargo, fleet, item.resource, cargotype, amount);    
     }
 
